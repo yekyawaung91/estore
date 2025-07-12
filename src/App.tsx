@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { CartProvider } from './contexts/CartContext';
@@ -20,7 +20,7 @@ function App() {
   return (
     <ThemeProvider>
       <CartProvider>
-        <Router>
+        <BrowserRouter basename="/estore">
           <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
             <Header />
             <main className="flex-1">
@@ -46,7 +46,7 @@ function App() {
               }}
             />
           </div>
-        </Router>
+        </BrowserRouter>
       </CartProvider>
     </ThemeProvider>
   );
